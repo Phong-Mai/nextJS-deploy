@@ -54,7 +54,7 @@ export default function BasicModal() {
   const handleSubmit =async () => {
     if(Object.values(errors).length > 0) {return}
    try {
-   const rs = await axios.post("https://bixso-book-mgmt-web.onrender.com/api/v1/login", {email: values.email, password: values.password})
+   const rs = await axios.post("https://hiepdt2909.pythonanywhere.com/api/v1/login", {email: values.email, password: values.password})
   
     if(rs.data) {
       dispatch(setUser(rs.data.data))

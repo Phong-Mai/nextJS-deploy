@@ -47,7 +47,7 @@ export default function ForgotPassword() {
     const { email } = values
     setOpenOTP(true)
     try {
-      const rs = await axios.post("https://bixso-book-mgmt-web.onrender.com/api/v1/forget-password", email)
+      const rs = await axios.post("https://hiepdt2909.pythonanywhere.com/api/v1/forget-password", email)
       console.log("rs", rs);
       toast.success("OK")
     
