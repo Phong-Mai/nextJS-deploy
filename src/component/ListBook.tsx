@@ -13,8 +13,7 @@ import CardActionArea from '@mui/material/CardActionArea/CardActionArea';
 import EditIcon from '@mui/icons-material/Edit';
 import ModalDeleteBook from './ModalDeleteBook';
 import Loading from './Loading';
-import { Book } from '@/types';
-import { addUser, selectUser, setUser } from '@/redux/features/userSlice';
+import {  selectUser, setUser } from '@/redux/features/userSlice';
 import { useSession } from 'next-auth/react';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -27,18 +26,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   },
 }));
 
-const StyledTableRow = styled(TableRow)(({ theme }) => ({
-  '&:nth-of-type(odd)': {
-    backgroundColor: theme.palette.action.hover,
-  },
-  // hide last border
-  '&:last-child td, &:last-child th': {
-    border: 0,
-  },
-}));
-export interface booksProps {
-  books: Book[] | null;
-}
+
 
 // props api {booksTest} : booksProps
 export default function ListBook() {
