@@ -133,7 +133,7 @@ export default function ModalEditConfirmPassword() {
           {isPassword && <Typography py={1} color='red'>Please enter a password</Typography>}
             <div style={{alignSelf:'flex-end'}}>
             <Button onClick={()=> handleCloseModal()} color='success'  style={{marginRight:5}}>Cancel</Button>
-            <Button onClick={(e) => handleSubmit(e)} color='error'  style={{textAlign:'right'}}>Agree</Button>
+            <Button onClick={handleSubmit} color='error'  style={{textAlign:'right'}}>Agree</Button>
             </div>
           </Box>
         </Box>
