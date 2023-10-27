@@ -67,7 +67,7 @@ export default function BasicModal() {
   }
   const handleSignGoogle =() => {
  
-      signIn('google', {callbackUrl: 'http://localhost:3000/home'})
+      signIn('google', {callbackUrl: 'https://next-js-deploy-gamma.vercel.app/'})
 
   }
   return (
