@@ -10,6 +10,8 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import Image from 'next/image';
+import logo from "@/pic/logo.jpg"
 const style = {
   position: 'absolute' as 'absolute',
   top: '50%',
@@ -58,7 +60,7 @@ export default function SignUp() {
   return (
     <div>
         <Box sx={style}>
-           <img height={350} alt='logo' width='100%' src='https://scontent.fsgn19-1.fna.fbcdn.net/v/t39.30808-6/387137289_122125665332033075_4833314601378122701_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_ohc=ZJuUof9_DdcAX-d6wK1&_nc_ht=scontent.fsgn19-1.fna&oh=00_AfCdsF8A7vIYXljWFsiq2cXneHLs4hZQhvQUpOYck1aTxw&oe=652EAF54'/>
+           <Image height={350} alt='logo' src={logo}/>
             <Typography sx={{color:'yellowgreen', paddingTop:1}} variant="h4" component="h1">
             Sign Up
           </Typography>
