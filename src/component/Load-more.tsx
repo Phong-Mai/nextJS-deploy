@@ -1,5 +1,5 @@
 "use client"
-import { Book } from '@/types'
+
 import React, { useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
 
@@ -12,7 +12,7 @@ import { getBooks, selectBooks } from '@/redux/features/booksSlice'
 const LoadMore = () => {
 
     const dispatch = useDispatch()
-    const [books, setBooks] = useState<Book[]>([]);
+    const [books, setBooks] = useState<any>([]);
     const [loading, setLoading] = useState(false)
     const [pagesLoaded, setPagesLoaded] = useState(0);
     const { ref, inView } = useInView();

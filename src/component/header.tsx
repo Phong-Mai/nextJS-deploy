@@ -91,7 +91,7 @@ export default function Header() {
     setSearch(e.target.value)
    
   }
-  const handleSubmit = (e) => {
+  const handleSubmit = (e : any) => {
     e.preventDefault()
     dispatch(searchBook(search))
     router.push('/search')

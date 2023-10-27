@@ -18,13 +18,12 @@ export const counterSlice: any = createSlice({
         addBook: (state : RootState, action) => {
             setLocalBook(action.payload)
             state.counter = action.payload
-            
         },
         getBook : (state : RootState) => {
-            state.counter = JSON.parse(getLocalBook("book"))
+            state.counter = getLocalBook("book")
         }
     }
 })
 export const { addBook, getBook } = counterSlice.actions;
-export const selectValue = (state : RootState) => state.counter.counter
+export const selectValue = (state : any) => state.counter.counter
 export default counterSlice.reducer;

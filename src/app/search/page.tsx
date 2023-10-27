@@ -40,10 +40,11 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 export default function ListBook() {
     const router = useRouter()
-    const [books, setBook] = useState<any>([])
-    console.log(books);
-    
+    // const [books, setBook] = useState<any>([])
+    const book = useSelector(selectBooks)
     const search = useSelector(selectSearch)
+  
+    const searchBook = book?.filter((rs : any) => rs.title.toUpperCase().includes(search.toUpperCase()) || rs.author.toUpperCase().includes(search.toUpperCase()))
     const dispatch = useDispatch()
     const handleClick = (detailBook : any) => {
         dispatch(addBook(detailBook))
@@ -52,15 +53,15 @@ export default function ListBook() {
     const handleEdit = (detailBook : any) => {
       dispatch(addBook(detailBook))
     }
-    useEffect(() => {
-        setBook(search || localStorage.getItem("search"))
-    },[search])
+    // useEffect(() => {
+    //     setBook(search)
+    // },[search])
     
   return (
     <Box  my={4} >
     
           <Grid container spacing={2}>
-          {books?.map((book :any, index : any) => (
+          {searchBook?.map((book :any, index : any) => (
             <Grid item xs={12} sm={6} md={2} key={index}>
             <Card >
               <CardActionArea >
@@ -93,38 +94,6 @@ export default function ListBook() {
        ))}
         </Grid>
       </Box>
-    // <TableContainer component={Paper}>
-    //   <Table sx={{ minWidth: 700}} aria-label="customized table">
-    //     <TableHead>
-    //       <TableRow>
-    //         <StyledTableCell>Image</StyledTableCell>
-    //         <StyledTableCell align="right">Author</StyledTableCell>
-    //         <StyledTableCell align="right">Title</StyledTableCell>
-    //         <StyledTableCell align="right">Description</StyledTableCell>
-    //         <StyledTableCell align="right">Price</StyledTableCell>
-    //         <StyledTableCell align="right">Action</StyledTableCell>
-    //       </TableRow>
-    //     </TableHead>
-    //     <TableBody>
-    //       {books?.map((book, index) => (
-    //         <StyledTableRow onClick={() => handleClick(book)} key={index}>
-    //          <StyledTableCell component="th" scope="book">
-    //             <img width={150} height={150} src={book.image}/>
-    //           </StyledTableCell>
-    //           <StyledTableCell align="right">{book.author}</StyledTableCell>
-    //           <StyledTableCell align="right">{book.title}</StyledTableCell>
-    //           <StyledTableCell align="right">{book.description}</StyledTableCell>
-    //           <StyledTableCell align="right">{book.price}$</StyledTableCell>
-    //           <StyledTableCell align="right">
-    //           <Button sx={{marginRight:1}} size='small' color='success' variant="outlined">Edit</Button>
-    //           <Button size='small' color='warning' variant="outlined">Delete</Button>
-    //           </StyledTableCell>
-    //         </StyledTableRow>
-    //       ))}
-    //     </TableBody>
- 
-    //   </Table>
-    //   {search?.length === 0 && <p style={{textAlign:'center'}}>No results were found</p>}
-    // </TableContainer>
+
   );
 }
