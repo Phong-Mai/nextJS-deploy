@@ -15,7 +15,7 @@ import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
 
 import { setUserLocal } from '@/services/localstroge';
-import { addUser, setUser } from '@/redux/features/userSlice';
+import {  setUser } from '@/redux/features/userSlice';
 
 const style = {
   position: 'absolute' as 'absolute',
