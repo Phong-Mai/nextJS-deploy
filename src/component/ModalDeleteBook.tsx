@@ -31,9 +31,7 @@ const VisuallyHiddenInput = styled('input')({
     whiteSpace: 'nowrap',
     width: 1,
   });
-export default function ModalDeleteBook({id} : {id : number}) {
-  console.log("id", id);
-  
+export default function ModalDeleteBook() {
   const blue = {
     100: '#DAECFF',
     200: '#b6daff',

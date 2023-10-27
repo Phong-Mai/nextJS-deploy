@@ -53,7 +53,7 @@ export default function ListBook() {
       dispatch(addBook(detailBook))
     }
     useEffect(() => {
-        setBook(search ||JSON.parse(localStorage.getItem("searchBook")))
+        setBook(search || localStorage.getItem("search"))
     },[search])
     
   return (
