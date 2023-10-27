@@ -1,5 +1,4 @@
 "use client"
-import { Book } from "@/types";
 import axios from 'axios'
 export async function fetchAPIPage(page: number) {
     const bookPage = 24;
@@ -7,7 +6,7 @@ export async function fetchAPIPage(page: number) {
     try {
         const response = await fetch(apiUrl);
         const data = await response.json()
-        return data as Book[];
+        return data;
     } catch (error) {
         console.log('fetching data', error);
         return null
