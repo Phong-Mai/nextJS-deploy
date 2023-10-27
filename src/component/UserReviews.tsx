@@ -7,7 +7,7 @@ import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
 import ThumbDownOffAltIcon from '@mui/icons-material/ThumbDownOffAlt';
 import { Container } from '@mui/system';
 import TotalUserRating from './TotalUserRating';
-const UserReviews = ({review}) => {
+const UserReviews = ({review} : any) => {
   return (
         <Box>
         <Grid  container>

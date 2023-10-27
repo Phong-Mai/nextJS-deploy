@@ -24,7 +24,7 @@ export default function UserCard() {
   const value = useSelector(selectValue)
   const [rating, setRating] = useState(1)
   const dispatch = useDispatch();
-  const handleChange = (e) => {
+  const handleChange = (e : any) => {
     setText(e.target.value)
   }
   const fetch =async () => {
@@ -45,7 +45,6 @@ export default function UserCard() {
       console.log(error);
       
     }
-    
   }
   return (
   

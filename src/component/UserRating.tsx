@@ -16,7 +16,7 @@ const labels: { [index: string]: string } = {
   5: 'Excellent+',
 };
 
-export default function UserRating({rating}) {
+export default function UserRating({rating} : any) {
   const value = rating
 
   return (
