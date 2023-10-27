@@ -13,7 +13,7 @@ export const userSlice: any = createSlice({
     reducers :{
         setUser: (state : RootState, action) => {
             setUserLocal(action.payload)
-            state.user = JSON.parse(localStorage.getItem("user"))
+            state.user = action.payload
         },
         addUser: (state : RootState, action) => {
             state.user = action.payload
@@ -25,6 +25,6 @@ export const userSlice: any = createSlice({
     }
 })
 export const { setUser, userLogout } = userSlice.actions;
-export const selectUser = (state : RootState) => state.user.user
+export const selectUser = (state : any) => state.user.user
 // export const loadingSuccess = (state : RootState) => state.user.isLoading
 export default userSlice.reducer;
